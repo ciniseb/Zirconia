@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/banque_z"
+        android:title="Banque Zirconienne" />
+    <item
+        android:id="@+id/des"
+        android:title="Dés"/>
+    <item
+        android:id="@+id/jeux_taverne"
+        android:title="Jeux de taverne"/>
+    <item
+        android:id="@+id/guide_mj"
+        android:title="Guide du MJ"/>
+</menu>

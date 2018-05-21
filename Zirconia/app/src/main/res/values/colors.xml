@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Thème par défaut-->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--Thème par défaut-->
+
+
+    <!--Couleurs de base-->
+    <color name="noir">#000000</color>
+    <color name="gold">#E5C100</color>
+    <color name="bleu">#20a7db</color>
+    <color name="Rouge">#FF0000</color>
+</resources>

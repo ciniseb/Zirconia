@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/prenomJoueur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/noir"
+        android:text="Prénom" />
+
+    <TextView
+        android:id="@+id/nomJoueur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/prenomJoueur"
+        android:textSize="20sp"
+        android:textColor="@color/noir"
+        android:text="Nom" />
+
+    <TextView
+        android:id="@+id/coupleJoueur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prenomJoueur"
+        android:textSize="10sp"
+        android:textColor="@color/noir"
+        android:text="@string/coupleJoueur" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/nomJoueur"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/raceJoueur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="16sp"
+            android:textColor="@color/noir"
+            android:text="@string/raceJoueur" />
+
+        <TextView
+            android:id="@+id/classeJoueur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="16sp"
+            android:textColor="@color/noir"
+            android:text="@string/classeJoueur" />
+
+        <TextView
+            android:id="@+id/ageJoueur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="16sp"
+            android:textColor="@color/noir"
+            android:text="@string/ageJoueur" />
+
+        <TextView
+            android:id="@+id/genreJoueur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="16sp"
+            android:textColor="@color/noir"
+            android:text="@string/genreJoueur" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coupleJoueur"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/factionJoueur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/noir"
+                android:text="@string/factionJoueur" />
+
+            <TextView
+                android:id="@+id/ressuzinsJoueur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/noir"
+                android:text="@string/ressuzinsJoueur" />
+
+            <TextView
+                android:id="@+id/zirconsJoueur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/noir"
+                android:text="@string/zirconsJoueur" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

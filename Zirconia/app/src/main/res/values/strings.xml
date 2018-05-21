@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Zirconia</string>
+
+    //Spéciaux
+    <string name="ageClient">Âge : %1$d</string>
+    <string name="raceClient">Race : %1$s</string>
+    <string name="classeClient">Classe : %1$s</string>
+    <string name="fiabiliteClient">Fiabilité : %1$d%%</string>
+
+    <string name="ageJoueur">Âge : %1$d</string>
+    <string name="raceJoueur">Race : %1$s</string>
+    <string name="classeJoueur">Classe : %1$s</string>
+    <string name="genreJoueur">Genre : %1$s</string>
+    <string name="coupleJoueur">En couple avec : %1$s</string>
+    <string name="factionJoueur">Faction : %1$s</string>
+    <string name="ressuzinsJoueur">Réssuzin(s) : %1$d</string>
+    <string name="zirconsJoueur">Zircons : %1$d Z</string>
+</resources>

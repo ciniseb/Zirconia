@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/gauche"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/nomClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/prenomClient"
+            android:text="Nom"
+            android:textColor="@color/noir"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/prenomClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Prénom"
+            android:textColor="@color/noir"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/ageClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/nomClient"
+            android:gravity="end|center"
+            android:text="@string/ageClient"
+            android:textColor="@color/noir"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prenomClient"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/raceClient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/raceClient"
+                    android:textColor="@color/noir"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/classeClient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/classeClient"
+                    android:textColor="@color/noir"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fiabiliteClient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:text="@string/fiabiliteClient"
+                android:textColor="@color/noir"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/supp"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:text="Supp."
+        android:background="@drawable/contour_zircons_banque" />
+
+</LinearLayout>
