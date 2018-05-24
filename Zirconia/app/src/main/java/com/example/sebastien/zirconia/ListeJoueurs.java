@@ -2,6 +2,7 @@ package com.example.sebastien.zirconia;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -37,17 +38,13 @@ public class ListeJoueurs extends AppCompatActivity
         {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                BanqueZirconienne.comptesBancaires.set(position, new CompteBancaire(Partie.joueurs.get(position).getPrenom(), Partie.joueurs.get(position).getNom(), Partie.joueurs.get(position).getRace(), Partie.joueurs.get(position).getClasse(), Partie.joueurs.get(position).getAge(), Partie.joueurs.get(position).getFiabilite()));
-                //BanqueZirconienne.comptesBancaires.add(position, new CompteBancaire(Partie.joueurs.get(position).getPrenom(),Partie.joueurs.get(position).getNom(),Partie.joueurs.get(position).getRace(),Partie.joueurs.get(position).getClasse(),Partie.joueurs.get(position).getAge(),Partie.joueurs.get(position).getFiabilite()));
-                //BanqueZirconienne.comptesBancaires.add(new CompteBancaire(Partie.joueurs.get(position).getPrenom(),Partie.joueurs.get(position).getNom(),Partie.joueurs.get(position).getRace(),Partie.joueurs.get(position).getClasse(),Partie.joueurs.get(position).getAge(),Partie.joueurs.get(position).getFiabilite()));
-                Partie.joueurs.get(position).setCompteBancaireExiste(true);
-                BanqueZirconienne.adapteur.notifyDataSetChanged();
+                Partie.joueurs.get(position).setCompteBancaire(Partie.joueurs.get(position));
                 adapteur.notifyDataSetChanged();
+                BanqueZirconienne.actualisationComptesBancaires();
                 finish();
             }
         });
     }
-
     //custom ArrayAdapter
     class AdapteurArrayListeJoueurs extends ArrayAdapter<Joueur>
     {
@@ -97,36 +94,13 @@ public class ListeJoueurs extends AppCompatActivity
             view.setBackgroundColor(Color.WHITE);
             view.setClickable(false);
 
-
-            if(joueur.getCompteBancaireExiste())
+            if(joueur.getCompteBancaire().compteActif)
             {
                 view = inflater.inflate(R.layout.layout_compte_existant, null);
                 view.setBackgroundColor(Color.GRAY);
                 view.setClickable(true);
             }
 
-
-            /*if(joueur.getCompteBancaireExiste())
-                return emptyView;
-            else
-                return view;*/
-
-            /*if(joueur.getCompteBancaireExiste())
-                view.setVisibility(View.GONE);
-            else
-                view.setVisibility(View.VISIBLE);
-            return view;*/
-
-            /*if(joueur.getCompteBancaireExiste())
-            {
-                view.setClickable(true);
-                view.setBackgroundColor(Color.GRAY);
-            }
-            else if(!joueur.getCompteBancaireExiste())
-            {
-                view.setClickable(false);
-                view.setBackgroundColor(Color.WHITE);
-            }*/
             return view;
         }
 

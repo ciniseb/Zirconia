@@ -3,10 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/banque_z"
-        android:title="Banque Zirconienne" />
+        android:icon="@drawable/icone_sac_zircons"
+        android:title="Banque Zirconienne"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/des"
-        android:title="Dés"/>
+        android:icon="@drawable/icone_dodecagone_de"
+        android:title="Dés"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/jeux_taverne"
         android:title="Jeux de taverne"/>

@@ -8,9 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.PleinEcran">
         <activity
             android:name=".Partie"
+            android:theme="@style/AppTheme"
             android:label="Partie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +22,7 @@
         <activity android:name=".MenuPrincipal" />
         <activity
             android:name=".BanqueZirconienne"
-            android:label="Banque Zirconienne" />
+            android:screenOrientation="portrait" />
         <activity android:name=".ListeJoueurs" />
         <activity android:name=".CompteBancaire" />
     </application>

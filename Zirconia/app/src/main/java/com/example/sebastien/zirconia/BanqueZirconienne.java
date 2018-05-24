@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +22,7 @@ public class BanqueZirconienne extends AppCompatActivity
 {
     //Créer
     Button nouvCompte, suppUnCompte;
-    static ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
     static AdapteurArrayCompteBancaire adapteur;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,17 +30,15 @@ public class BanqueZirconienne extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_banque_zirconienne);
 
-
-        for(int i = 0; i < Partie.joueurs.size() ; i++)
+        //suppClique = false;
+        ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
+        for(int i = 0 ; i < Partie.joueurs.size() ; i++)
         {
-            comptesBancaires.add(new CompteBancaire(true));
+            comptesBancaires.add(Partie.joueurs.get(i).getCompteBancaire());
         }
-
         adapteur = new AdapteurArrayCompteBancaire(this, 0, comptesBancaires);
-
         ListView listView = (ListView) findViewById(R.id.listeComptesBancaires);
         listView.setAdapter(adapteur);
-
 
         //Attribuer
         nouvCompte = (Button) findViewById(R.id.nouvCompte);
@@ -58,6 +55,7 @@ public class BanqueZirconienne extends AppCompatActivity
             public void onClick(View view)
             {
                 startActivity(new Intent(BanqueZirconienne.this, ListeJoueurs.class));
+                //finish();
             }
         });
         suppUnCompte.setOnClickListener(new View.OnClickListener()
@@ -90,6 +88,23 @@ public class BanqueZirconienne extends AppCompatActivity
         });
 
     }
+    //Méthodes
+    static public void actualisationComptesBancaires()
+    {
+        ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
+        for(int i = 0 ; i < Partie.joueurs.size() ; i++)
+        {
+            comptesBancaires.add(Partie.joueurs.get(i).getCompteBancaire());
+        }
+        adapteur.clear();
+
+        for (Object object : comptesBancaires)
+        {
+
+            adapteur.insert(comptesBancaires.get(adapteur.getCount()), adapteur.getCount());
+        }
+        adapteur.notifyDataSetChanged();
+    }
 
     //custom ArrayAdapter
     class AdapteurArrayCompteBancaire extends ArrayAdapter<CompteBancaire>
@@ -111,7 +126,7 @@ public class BanqueZirconienne extends AppCompatActivity
 
         public View getView(final int position, View convertView, ViewGroup parent)
         {
-            CompteBancaire compteBancaire = comptesBancaires.get(position);
+            final CompteBancaire compteBancaire = comptesBancaires.get(position);
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.layout_bouton_compte_bancaire, null);
@@ -136,8 +151,8 @@ public class BanqueZirconienne extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-                    comptesBancaires.set(position, new CompteBancaire(true));
-                    Partie.joueurs.get(position).setCompteBancaireExiste(false);
+                    comptesBancaires.set(position, new CompteBancaire());
+                    Partie.joueurs.get(position).setCompteBancaire(new CompteBancaire());
                     notifyDataSetChanged();
                 }
             });
@@ -146,7 +161,7 @@ public class BanqueZirconienne extends AppCompatActivity
             view.setClickable(false);
 
 
-            if(compteBancaire.getCompteVide())
+            if(!compteBancaire.getCompteActif())
             {
                 view = inflater.inflate(R.layout.layout_compte_vide, null);
                 view.setClickable(true);

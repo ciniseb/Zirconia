@@ -22,8 +22,9 @@ public class Partie extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_partie);
 
-        joueurs.add(new Joueur("Ciniseb", "Galor", "Homme", "Sylphigle", "Cartomancien", 122, "Blanc", "chatain", "curvy", "chatain", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Gabrya Winchester", "Aucune", 2, 69,false,85));
-        joueurs.add(new Joueur("Gabrya", "Winchester", "Femme", "Zygöge", "Archer Élémentaire", 68, "Blanc", "brun", "droits", "bruns", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Ciniseb Galor", "Aucune", 1, 54,false,85));
+        //Temporaire
+        joueurs.add(new Joueur("Ciniseb", "Galor", "Homme", "Sylphigle", "Cartomancien", 122, "Blanc", "chatain", "curvy", "chatain", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Gabrya Winchester", "Aucune", 2, 69, new CompteBancaire(), false,85));
+        joueurs.add(new Joueur("Gabrya", "Winchester", "Femme", "Zygöge", "Archer Élémentaire", 68, "Blanc", "brun", "droits", "bruns", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Ciniseb Galor", "Aucune", 1, 54, new CompteBancaire(),false,85));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

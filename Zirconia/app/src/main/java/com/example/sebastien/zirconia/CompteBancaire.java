@@ -18,23 +18,24 @@ public class CompteBancaire  extends AppCompatActivity
     ArrayList<Placement> placements;
 
     //État du compte
-    boolean compteVide;
+    boolean compteActif;
 
     //Constructeurs
-    CompteBancaire(){}
-    CompteBancaire(boolean compteVide)
+    CompteBancaire()
     {
-        this.compteVide = compteVide;
+        this.compteActif = false;
     }
-    CompteBancaire(String prenomClient, String nomClient, String raceClient, String classeClient, int ageClient, int fiabilité/*, ArrayList<Placement> placements*/)
+    CompteBancaire(Joueur joueur)//Constructeur lorsque le compte bancaire du joueur est créé
     {
-        this.prenomClient = prenomClient;
-        this.nomClient = nomClient;
-        this.raceClient = raceClient;
-        this.classeClient = classeClient;
-        this.ageClient = ageClient;
-        this.fiabilité = fiabilité;
+        this.prenomClient = joueur.getPrenom();
+        this.nomClient = joueur.getNom();
+        this.raceClient = joueur.getRace();
+        this.classeClient = joueur.getClasse();
+        this.ageClient = joueur.getAge();
+        this.fiabilité = joueur.getFiabilite();
         //this.placements = placements;
+
+        this.compteActif = true;
     }
 
     //Getteurs & setteurs
@@ -66,14 +67,14 @@ public class CompteBancaire  extends AppCompatActivity
     {
         return placements;
     }
-    public boolean getCompteVide()
+    public boolean getCompteActif()
     {
-        return compteVide;
+        return compteActif;
     }
 
-    public void setCompteVide(boolean compteVide)
+    public void setCompteActif(boolean compteActif)
     {
-        this.compteVide = compteVide;
+        this.compteActif = compteActif;
     }
 
     //Méthodes

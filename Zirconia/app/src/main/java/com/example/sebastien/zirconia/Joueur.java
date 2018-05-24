@@ -23,12 +23,13 @@ public class Joueur
      int ressuzins, zircons;
 
     //CompteBancaire
+    CompteBancaire compteBancaire;
     Boolean compteBancaireExiste;
     int fiabilite;
 
     //Constructeur sans genre
     Joueur() {}
-    Joueur(String prenom, String nom, String genre, String race, String classe, int age, String couleurPeau, String couleurCheveux, String formeCheveux, String couleurPoils, String emplacementDesPoils, String couleurYeux, int longueurCheveux, int beauteVisage, int grosseur, int grandeur, int musculature, int beauteCorps, String[] qualites, String[] defauts, String enCoupleAvec, String faction, int ressuzins, int zircons, Boolean compteBancaireExiste, int fiabilite)
+    Joueur(String prenom, String nom, String genre, String race, String classe, int age, String couleurPeau, String couleurCheveux, String formeCheveux, String couleurPoils, String emplacementDesPoils, String couleurYeux, int longueurCheveux, int beauteVisage, int grosseur, int grandeur, int musculature, int beauteCorps, String[] qualites, String[] defauts, String enCoupleAvec, String faction, int ressuzins, int zircons,CompteBancaire compteBancaire, Boolean compteBancaireExiste, int fiabilite)
     {
         this.prenom = prenom;
         this.nom = nom;
@@ -56,6 +57,7 @@ public class Joueur
         this.ressuzins = ressuzins;
         this.zircons = zircons;
 
+        this.compteBancaire =compteBancaire;
         this.compteBancaireExiste = compteBancaireExiste;
         this.fiabilite = fiabilite;
     }
@@ -160,6 +162,11 @@ public class Joueur
     {
         return zircons;
     }
+    public CompteBancaire getCompteBancaire()
+    {
+        return compteBancaire;
+    }
+
     public Boolean getCompteBancaireExiste()
     {
         return compteBancaireExiste;
@@ -169,6 +176,14 @@ public class Joueur
         return fiabilite;
     }
 
+    public void setCompteBancaire(Joueur joueur)
+    {
+        this.compteBancaire = new CompteBancaire(joueur);
+    }
+    public void setCompteBancaire(CompteBancaire compteBancaire )
+    {
+        this.compteBancaire = compteBancaire;
+    }
     public void setCompteBancaireExiste(Boolean compteBancaireExiste)
     {
         this.compteBancaireExiste = compteBancaireExiste;
