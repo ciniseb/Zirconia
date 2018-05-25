@@ -11,9 +11,27 @@ import java.util.ArrayList;
 
 public class Partie extends AppCompatActivity
 {
-    //Créer
-    static ArrayList<Joueur> joueurs = new ArrayList<>();
+    //Variables
+    ArrayList<Joueur> joueurs = new ArrayList<>();
 
+    //Constructeurs
+    Partie()
+    {
+        //Temporaire
+        joueurs.add(new Joueur("Ciniseb", "Galor", "Homme", "Sylphigle", "Cartomancien", 122, "Blanc", "chatain", "curvy", "chatain", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Gabrya Winchester", "Aucune", 2, 69, new CompteBancaire(), false,85));
+        joueurs.add(new Joueur("Gabrya", "Winchester", "Femme", "Zygöge", "Archer Élémentaire", 68, "Blanc", "brun", "droits", "bruns", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Ciniseb Galor", "Aucune", 1, 54, new CompteBancaire(),false,85));
+    }
+
+    //Getteurs & Setteurs
+    public ArrayList<Joueur> getJoueurs()
+    {
+        return joueurs;
+    }
+
+    public void setJoueurs(ArrayList<Joueur> joueurs)
+    {
+        this.joueurs = joueurs;
+    }
 
     //Overrides
     @Override
@@ -21,10 +39,6 @@ public class Partie extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_partie);
-
-        //Temporaire
-        joueurs.add(new Joueur("Ciniseb", "Galor", "Homme", "Sylphigle", "Cartomancien", 122, "Blanc", "chatain", "curvy", "chatain", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Gabrya Winchester", "Aucune", 2, 69, new CompteBancaire(), false,85));
-        joueurs.add(new Joueur("Gabrya", "Winchester", "Femme", "Zygöge", "Archer Élémentaire", 68, "Blanc", "brun", "droits", "bruns", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Ciniseb Galor", "Aucune", 1, 54, new CompteBancaire(),false,85));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

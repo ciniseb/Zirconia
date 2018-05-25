@@ -85,6 +85,8 @@ public class CompteBancaire  extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_compte_bancaire);
+
+        //TODO getIntent.getExtra position ... faire le xml
     }
 
 }

@@ -12,14 +12,14 @@
         <activity
             android:name=".Partie"
             android:theme="@style/AppTheme"
-            android:label="Partie">
+            android:label="Partie"/>
+        <activity android:name=".MenuPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuPrincipal" />
         <activity
             android:name=".BanqueZirconienne"
             android:screenOrientation="portrait" />
