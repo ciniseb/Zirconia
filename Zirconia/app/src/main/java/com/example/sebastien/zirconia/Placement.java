@@ -7,7 +7,7 @@ package com.example.sebastien.zirconia;
 public class Placement
 {
     //Variables
-    String type;
+    enum Type{} Type type;
     int tauxInterets;
     int pourcPertesCriseEco;
     double montant;

@@ -8,9 +8,9 @@
             <corners android:radius="25dp" />
 
             <gradient android:angle="270"
-                android:centerColor="@color/Rouge"
-                android:endColor="@color/Rouge"
-                android:startColor="@color/Rouge" />
+                android:centerColor="@color/rouge"
+                android:endColor="@color/rouge"
+                android:startColor="@color/rouge" />
         </shape>
     </item>
 </layer-list>

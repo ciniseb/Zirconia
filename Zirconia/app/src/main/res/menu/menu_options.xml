@@ -5,16 +5,19 @@
         android:id="@+id/banque_z"
         android:icon="@drawable/icone_sac_zircons"
         android:title="Banque Zirconienne"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/des"
-        android:icon="@drawable/icone_dodecagone_de"
+        android:icon="@drawable/icone_de_20"
         android:title="Dés"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
     <item
         android:id="@+id/jeux_taverne"
-        android:title="Jeux de taverne"/>
+        android:icon="@drawable/icone_jeux_taverne_1"
+        android:title="Jeux de taverne"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/guide_mj"
-        android:title="Guide du MJ"/>
+        android:title="Guide du MJ"
+        app:showAsAction="ifRoom"/>
 </menu>
