@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/icon_bouton">
+    <item android:id="@+id/icone_bouton_rouge"
+        android:bottom="6dp"
+        android:left="4dp"
+        android:top="6dp"
+        android:right="4dp">
         <shape xmlns:android="http://schemas.android.com/apk/res/android" >
             <stroke android:width="3dp"
                 android:color="#80FFFFFF" />
@@ -8,9 +12,9 @@
             <corners android:radius="25dp" />
 
             <gradient android:angle="270"
-                android:centerColor="#90150517"
-                android:endColor="#90150517"
-                android:startColor="#90150517" />
+                android:centerColor="@color/rouge"
+                android:endColor="@color/rouge"
+                android:startColor="@color/rouge" />
         </shape>
     </item>
 </layer-list>

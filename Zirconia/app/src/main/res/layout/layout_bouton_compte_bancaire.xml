@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorItem"
     android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal">
 
@@ -18,7 +19,7 @@
             android:id="@+id/nomClient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/prenomClient"
+            android:layout_toEndOf="@id/prenomClient"
             android:text="Nom"
             android:textColor="@color/noir"
             android:textSize="20sp" />
@@ -27,7 +28,7 @@
             android:id="@+id/prenomClient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:text="Prénom"
             android:textColor="@color/noir"
             android:textSize="20sp" />
@@ -36,7 +37,7 @@
             android:id="@+id/ageClient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/nomClient"
+            android:layout_toEndOf="@id/nomClient"
             android:gravity="end|center"
             android:text="@string/ageClient"
             android:textColor="@color/noir"
@@ -82,11 +83,11 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/supp"
         android:layout_width="110dp"
         android:layout_height="match_parent"
-        android:text="Supp."
-        android:background="@drawable/contour_zircons_banque" />
+        android:src="@drawable/ic_delete_forever_black_24dp"
+        android:contentDescription="Supprimer le compte bancaire" />
 
 </LinearLayout>

@@ -1,9 +1,16 @@
 package com.example.sebastien.zirconia;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import static com.example.sebastien.zirconia.MenuPrincipal.numPartie;
+import static com.example.sebastien.zirconia.MenuPrincipal.parties;
 
 /**
  * Created by sebastien on 18-01-31.
@@ -78,6 +85,12 @@ public class CompteBancaire  extends AppCompatActivity
     }
 
     //Méthodes
+    public void startActivity(int position, Context context)
+    {
+        Intent intent = new Intent(context, this.getClass());
+        intent.putExtra("position", position);
+        context.startActivity(intent);
+    }
 
     //Overrides
     @Override
@@ -86,7 +99,14 @@ public class CompteBancaire  extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_compte_bancaire);
 
-        //TODO getIntent.getExtra position ... faire le xml
+        int position = getIntent().getIntExtra("position", 0);
+        Joueur joueur = parties.get(numPartie).getJoueurs().get(position);
+
+        TextView prenomClient = findViewById(R.id.prenomClient);
+        TextView nomClient = findViewById(R.id.nomClient);
+
+        prenomClient.setText(joueur.getPrenom());
+        nomClient.setText(joueur.getNom());
     }
 
 }

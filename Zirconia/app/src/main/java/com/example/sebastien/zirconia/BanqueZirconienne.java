@@ -4,14 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,7 +35,7 @@ public class BanqueZirconienne extends AppCompatActivity
         setContentView(R.layout.layout_banque_zirconienne);
 
         //suppClique = false;
-        ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
+        final ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
         for(int i = 0 ; i < parties.get(numPartie).getJoueurs().size() ; i++)
         {
             comptesBancaires.add(parties.get(numPartie).getJoueurs().get(i).getCompteBancaire());
@@ -66,16 +67,16 @@ public class BanqueZirconienne extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                if(suppUnCompte.getText() == "Annuler")
+                if(suppUnCompte.getText() == "Annuler\nla suppression")
                 {
                     suppUnCompte.setText("Supprimer\nun compte");
-                    suppUnCompte.setBackgroundResource(R.drawable.icon_bouton);
+                    suppUnCompte.setSelected(false);
                     adapteur.setAfficheBoutonSupp(false);
                 }
                 else
                 {
-                    suppUnCompte.setText("Annuler");
-                    suppUnCompte.setBackgroundResource(R.drawable.icon_bouton_rouge);
+                    suppUnCompte.setText("Annuler\nla suppression");
+                    suppUnCompte.setSelected(true);
                     adapteur.setAfficheBoutonSupp(true);
                 }
                 adapteur.notifyDataSetChanged();
@@ -86,9 +87,8 @@ public class BanqueZirconienne extends AppCompatActivity
         {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                Intent intent = new Intent(BanqueZirconienne.this, CompteBancaire.class);
-                intent.putExtra("position", position);
-                startActivity(intent);
+                Log.wtf("Compte bancaire", comptesBancaires.get(position).getPrenomClient());
+                comptesBancaires.get(position).startActivity(position, getApplicationContext());
             }
         });
 
@@ -142,8 +142,8 @@ public class BanqueZirconienne extends AppCompatActivity
             TextView raceClient = (TextView) view.findViewById(R.id.raceClient);
             TextView classeClient = (TextView) view.findViewById(R.id.classeClient);
             TextView fiabiliteClient = (TextView) view.findViewById(R.id.fiabiliteClient);
-            Button supp = (Button) view.findViewById(R.id.supp);
-            supp.setBackgroundResource(R.drawable.icon_bouton_supp);
+            ImageButton supp = (ImageButton) view.findViewById(R.id.supp);
+            supp.setBackgroundResource(R.drawable.bouton_supp);
 
             prenomClient.setText(compteBancaire.getPrenomClient());
             nomClient.setText(compteBancaire.getNomClient());

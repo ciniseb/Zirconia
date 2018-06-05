@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Thème par défaut-->
+    <color name="colorItem">@color/parcheminLeger</color>
     <color name="colorBackground">@color/parcheminClair</color>
     <color name="colorPrimary">@color/parchemin</color>
     <color name="colorPrimaryDark">@color/parcheminSombre</color>
     <color name="colorAccent">#FF4081</color>
 
     <!--Thème Zirconia-->
+    <color name="parcheminLeger">@color/parchemin4_50</color>
     <color name="parcheminClair">@color/parchemin4_200</color>
     <color name="parchemin">@color/parchemin4_500</color>
     <color name="parcheminSombre">@color/parchemin4_700</color>

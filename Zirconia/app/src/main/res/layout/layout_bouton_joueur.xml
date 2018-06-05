@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorItem"
     android:orientation="vertical"
     android:padding="4dp">
 
@@ -9,7 +10,7 @@
         android:id="@+id/prenomJoueur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:textSize="20sp"
         android:textColor="@color/noir"
         android:text="Prénom" />
@@ -18,7 +19,7 @@
         android:id="@+id/nomJoueur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/prenomJoueur"
+        android:layout_toEndOf="@id/prenomJoueur"
         android:textSize="20sp"
         android:textColor="@color/noir"
         android:text="Nom" />
@@ -35,7 +36,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/nomJoueur"
+        android:layout_toEndOf="@id/nomJoueur"
         android:orientation="vertical">
 
 

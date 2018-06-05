@@ -121,12 +121,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:clipToPadding="false"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/contour_layout"
             android:padding="6dip"
@@ -152,7 +153,8 @@
         <Button
             android:id="@+id/nouvPartie"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="90dp"
+            android:background="@drawable/style_button_ripple_rond"
             android:text="Nouvelle partie" />
 
         <!--<LinearLayout
@@ -179,7 +181,8 @@
         <Button
             android:id="@+id/quitter"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
+            android:background="@drawable/style_button_ripple_rond"
             android:text="Quitter" />
     </LinearLayout>
 

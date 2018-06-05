@@ -28,7 +28,6 @@ public class Joueur
     int fiabilite;
 
     //Constructeur sans genre
-    Joueur() {}
     Joueur(String prenom, String nom, String genre, String race, String classe, int age, String couleurPeau, String couleurCheveux, String formeCheveux, String couleurPoils, String emplacementDesPoils, String couleurYeux, int longueurCheveux, int beauteVisage, int grosseur, int grandeur, int musculature, int beauteCorps, String[] qualites, String[] defauts, String enCoupleAvec, String faction, int ressuzins, int zircons,CompteBancaire compteBancaire, Boolean compteBancaireExiste, int fiabilite)
     {
         this.prenom = prenom;

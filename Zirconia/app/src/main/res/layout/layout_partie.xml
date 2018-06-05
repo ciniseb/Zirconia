@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:clipToPadding="false"
+    android:padding="10dp"
     tools:context="com.example.sebastien.zirconia.Partie">
 
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/style_button_ripple_rond"
         android:layout_weight="1"
         android:text="Guide du jeu" />
 
@@ -30,6 +33,7 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/style_button_ripple_rond"
                 android:layout_weight="1"
                 android:text="Joueurs" />
 
@@ -37,6 +41,7 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/style_button_ripple_rond"
                 android:layout_weight="1"
                 android:text="Carte du monde" />
 
@@ -44,6 +49,7 @@
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/style_button_ripple_rond"
                 android:layout_weight="1"
                 android:visibility="invisible"/>
 
@@ -59,6 +65,7 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/style_button_ripple_rond"
                 android:layout_weight="1"
                 android:text="Les PNJs" />
 
@@ -66,17 +73,16 @@
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="@drawable/style_button_ripple_rond"                android:layout_weight="1"
                 android:text="Combats" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/style_button_ripple_rond"
                 android:layout_weight="1"
                 android:visibility="invisible" />
 
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
