@@ -1,5 +1,6 @@
 package com.example.sebastien.zirconia;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -69,5 +70,13 @@ public class Partie extends AppCompatActivity
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    //Méthodes
+    public void startActivity(int position, Context context)
+    {
+        Intent intent = new Intent(context, this.getClass());
+        intent.putExtra("position", position);
+        context.startActivity(intent);
     }
 }

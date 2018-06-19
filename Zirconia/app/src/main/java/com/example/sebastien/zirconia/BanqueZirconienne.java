@@ -19,8 +19,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.sebastien.zirconia.MenuPrincipal.numPartie;
-import static com.example.sebastien.zirconia.MenuPrincipal.parties;
+import static com.example.sebastien.zirconia.MenuPrincipal.partieActive;
 
 public class BanqueZirconienne extends AppCompatActivity
 {
@@ -36,9 +35,9 @@ public class BanqueZirconienne extends AppCompatActivity
 
         //suppClique = false;
         final ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
-        for(int i = 0 ; i < parties.get(numPartie).getJoueurs().size() ; i++)
+        for(int i = 0 ; i < partieActive.getJoueurs().size() ; i++)
         {
-            comptesBancaires.add(parties.get(numPartie).getJoueurs().get(i).getCompteBancaire());
+            comptesBancaires.add(partieActive.getJoueurs().get(i).getCompteBancaire());
         }
         adapteur = new AdapteurArrayCompteBancaire(this, 0, comptesBancaires);
         ListView listView = (ListView) findViewById(R.id.listeComptesBancaires);
@@ -97,9 +96,9 @@ public class BanqueZirconienne extends AppCompatActivity
     static public void actualisationComptesBancaires()
     {
         ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
-        for(int i = 0 ; i < parties.get(numPartie).getJoueurs().size() ; i++)
+        for(int i = 0 ; i < partieActive.getJoueurs().size() ; i++)
         {
-            comptesBancaires.add(parties.get(numPartie).getJoueurs().get(i).getCompteBancaire());
+            comptesBancaires.add(partieActive.getJoueurs().get(i).getCompteBancaire());
         }
         adapteur.clear();
 
@@ -157,7 +156,7 @@ public class BanqueZirconienne extends AppCompatActivity
                 public void onClick(View v)
                 {
                     comptesBancaires.set(position, new CompteBancaire());
-                    parties.get(numPartie).getJoueurs().get(position).setCompteBancaire(new CompteBancaire());
+                    partieActive.getJoueurs().get(position).setCompteBancaire(new CompteBancaire());
                     notifyDataSetChanged();
                 }
             });
@@ -188,5 +187,4 @@ public class BanqueZirconienne extends AppCompatActivity
             this.afficheBoutonSupp = afficheBoutonSupp;
         }
     }
-
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gauche"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorItem"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/interetTypePlacement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/noir"
+        android:textSize="26sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="end"
+        android:layout_toEndOf="@id/interetTypePlacement"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/retirer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/bleu"
+            android:background="@drawable/ic_indeterminate_check_box_black_50dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/contour_zircons_banque"
+            android:orientation="horizontal"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center|end"
+                android:padding="6dip"
+                android:paddingEnd="15dp"
+                android:text="0"
+                android:textColor="@color/bleu"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Z"
+                android:textColor="@color/bleu"
+                android:textSize="32dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/deposer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/bleu"
+            android:background="@drawable/ic_add_box_black_50dp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -13,7 +13,8 @@
             android:name=".Partie"
             android:label="Partie"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MenuPrincipal"
+        <activity
+            android:name=".MenuPrincipal"
             android:theme="@style/titre">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,8 @@
         <activity android:name=".ListeJoueurs" />
         <activity android:name=".CompteBancaire" />
         <activity android:name=".Generique" />
+        <activity android:name=".ListePlacements" />
+        <activity android:name=".ListePlacementsSMEER"></activity>
     </application>
 
 </manifest>

@@ -8,16 +8,31 @@ public class Placement
 {
     //Variables
     enum Type{Libre, Régulier, SMEER} Type type;
-    int tauxInterets;
+    float tauxInterets;
     int pourcPertesCriseEco;
     double montant;
 
-
+    //État du placement
+    Boolean placementActif;
 
     //Constructeurs
     Placement()
     {
-
+        this.placementActif = false;
+    }
+    Placement(Type type, float tauxInterets)
+    {
+        this.type = type;
+        this.tauxInterets = tauxInterets;
+        this.placementActif = false;
+    }
+    Placement(Type type, float tauxInterets, int pourcPertesCriseEco, double montant)
+    {
+        this.type = type;
+        this.tauxInterets = tauxInterets;
+        this.pourcPertesCriseEco = pourcPertesCriseEco;
+        this.montant = montant;
+        this.placementActif = true;
     }
 
     //Getteurs & setteurs
@@ -25,7 +40,7 @@ public class Placement
     {
         return type;
     }
-    public int getTauxInterets()
+    public float getTauxInterets()
     {
         return tauxInterets;
     }
@@ -37,12 +52,16 @@ public class Placement
     {
         return montant;
     }
+    public Boolean getPlacementActif()
+    {
+        return placementActif;
+    }
 
     public void setType(Type type)
     {
         this.type = type;
     }
-    public void setTauxInterets(int tauxInterets)
+    public void setTauxInterets(float tauxInterets)
     {
         this.tauxInterets = tauxInterets;
     }
@@ -54,6 +73,9 @@ public class Placement
     {
         this.montant = montant;
     }
-
+    public void setPlacementActif(Boolean placementActif)
+    {
+        this.placementActif = placementActif;
+    }
     //Méthodes
 }

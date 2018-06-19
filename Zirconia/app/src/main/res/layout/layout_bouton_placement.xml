@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gauche"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorItem"
+    android:paddingBottom="19dp"
+    android:paddingStart="40dp"
+    android:paddingEnd="40dp"
+    android:paddingTop="19dp">
+
+    <TextView
+        android:id="@+id/typePlacement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/noir"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tauxInteret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/typePlacement"
+        android:text="@string/tauxInteret"
+        android:textColor="@color/noir"
+        android:textSize="18sp" />
+</RelativeLayout>

@@ -15,4 +15,6 @@
     <string name="factionJoueur">Faction : %1$s</string>
     <string name="ressuzinsJoueur">Réssuzin(s) : %1$d</string>
     <string name="zirconsJoueur">Zircons : %1$d Z</string>
+    <string name="tauxInteret">Taux d\'intéret : %1$s</string>
+    <string name="variationsInteret">Variations\nd\'intérêt : %1$s</string>
 </resources>

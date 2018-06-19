@@ -137,6 +137,8 @@
                 android:id="@+id/parties"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="@color/noir"
                 android:gravity="center"
                 android:text="Parties" />
 
@@ -146,6 +148,7 @@
                 android:background="@color/colorPrimary" />
 
             <ListView
+                android:id="@+id/listeParties"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></ListView>
         </LinearLayout>

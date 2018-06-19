@@ -17,8 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.sebastien.zirconia.MenuPrincipal.numPartie;
-import static com.example.sebastien.zirconia.MenuPrincipal.parties;
+import static com.example.sebastien.zirconia.MenuPrincipal.partieActive;
 
 public class ListeJoueurs extends AppCompatActivity
 {
@@ -30,10 +29,8 @@ public class ListeJoueurs extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_liste_joueurs);
 
-        //create our new array adapter
-        adapteur = new ListeJoueurs.AdapteurArrayListeJoueurs(this, 0, parties.get(numPartie).getJoueurs());
+        adapteur = new ListeJoueurs.AdapteurArrayListeJoueurs(this, 0, partieActive.getJoueurs());
 
-        //Find list view and bind it with the custom adapter
         final ListView listeAjoutComptesBancaires = (ListView) findViewById(R.id.listeJoueurs);
         listeAjoutComptesBancaires.setAdapter(adapteur);
 
@@ -41,7 +38,7 @@ public class ListeJoueurs extends AppCompatActivity
         {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                parties.get(numPartie).getJoueurs().get(position).setCompteBancaire(parties.get(numPartie).getJoueurs().get(position));
+                partieActive.getJoueurs().get(position).setCompteBancaire(partieActive.getJoueurs().get(position));
                 adapteur.notifyDataSetChanged();
                 BanqueZirconienne.actualisationComptesBancaires();
                 finish();
