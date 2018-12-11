@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/des"
+        android:title="@string/des"
+        android:icon="@drawable/icone_de_20"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/jeux_taverne"
+        android:title="@string/jeux_de_taverne"
+        android:icon="@drawable/icone_jeux_taverne_1"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/generateur_evenements"
+        android:title="@string/generateur_d_evenements"
+        android:icon="@drawable/ic_shuffle"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/banque_z"
+        android:title="@string/banque_zirconienne"
+        android:icon="@drawable/icone_sac_zircons"
+        app:showAsAction="always" />
+</menu>

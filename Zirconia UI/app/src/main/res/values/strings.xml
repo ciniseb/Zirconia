@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Zirconia UI</string>
+
+    <!--Spéciaux-->
+    <string name="ageClient">Âge : %1$d</string>
+    <string name="raceClient">Race : %1$s</string>
+    <string name="classeClient">Classe : %1$s</string>
+    <string name="fiabiliteClient">Fiabilité : %1$d%%</string>
+
+    <string name="ageJoueur">Âge : %1$d</string>
+    <string name="raceJoueur">Race : %1$s</string>
+    <string name="classeJoueur">Classe : %1$s</string>
+    <string name="genreJoueur">Genre : %1$s</string>
+    <string name="coupleJoueur">En couple avec : %1$s</string>
+    <string name="factionJoueur">Faction : %1$s</string>
+    <string name="ressuzinsJoueur">Réssuzin(s) : %1$d</string>
+    <string name="zirconsJoueur">Zircons : %1$d Z</string>
+    <string name="tauxInteret">Taux d\'intéret : %1$s</string>
+    <string name="variationsInteret">Variations\nd\'intérêt : %1$s</string>
+    <string name="credits_legendaires">Crédits légendaires</string>
+    <string name="guide_du_mj">Guide du MJ</string>
+    <string name="des">Dés</string>
+    <string name="jeux_de_taverne">Jeux de taverne</string>
+    <string name="generateur_d_evenements">Générateur d\'événements</string>
+    <string name="banque_zirconienne">Banque Zirconienne</string>
+    <string name="couleurs">Couleurs</string>
+    <string name="zirconia">Zirconia</string>
+    <string name="z">«Z»</string>
+    <string name="i">«I»</string>
+    <string name="r">«R»</string>
+    <string name="c">«C»</string>
+    <string name="o">«O»</string>
+    <string name="n">«N»</string>
+    <string name="a">«A»</string>
+    <string name="beige_default">Beige (défault)</string>
+    <string name="brun">Brun</string>
+    <string name="bleu_pale">Bleu pâle</string>
+    <string name="bleu">Bleu</string>
+    <string name="bleu_fonce">Bleu foncé</string>
+    <string name="rouge">Rouge</string>
+    <string name="bourgogne">Bourgogne</string>
+    <string name="jaune">Jaune</string>
+    <string name="or">Or</string>
+    <string name="mauve">Mauve</string>
+    <string name="vert">Vert</string>
+    <string name="vert_foret">Vert forêt</string>
+    <string name="blanc">Blanc</string>
+    <string name="noir">Noir</string>
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sebastien.zirconia.activity.MenuPrincipal">
+
+    <!--<android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">-->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/titre_zirconia"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:foregroundGravity="center"
+                android:layout_width="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="96dp"
+                android:src="@drawable/logotype_zirconia"
+                android:contentDescription="TODO" />
+
+        </android.support.v7.widget.Toolbar>
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/contour_layout"
+            android:padding="6dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/parties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="@color/noir"
+                android:gravity="center"
+                android:text="Parties" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="6dip"
+                android:background="@color/colorPrimary" />
+
+            <ListView
+                android:id="@+id/listeParties"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/nouvPartie"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/style_button_ripple_rond"
+            android:text="Nouvelle partie" />
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:text="Button" />
+        </LinearLayout>-->
+
+        <Button
+            android:id="@+id/quitter"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/style_button_ripple_rond"
+            android:text="Quitter" />
+    </LinearLayout>
+
+</LinearLayout>

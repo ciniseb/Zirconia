@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sebastien.zirconia">
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.PleinEcran">
+        <activity
+            android:name=".activity.Partie"
+            android:label="Partie"
+            android:theme="@style/AppTheme.PleinEcran" />
+        <activity
+            android:name=".activity.MenuPrincipal"
+            android:theme="@style/CustomActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BanqueZirconienne"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ListeJoueurs" />
+        <activity android:name=".CompteBancaire" />
+        <activity android:name=".activity.Generique" />
+        <activity android:name=".activity.ListePlacements" />
+        <!-- <activity android:name=".ListePlacementsSMEER" /> -->
+        <activity android:name=".activity.Des"
+            android:label="Dés"
+            android:theme="@style/AppTheme"/>
+    </application>
+
+</manifest>
