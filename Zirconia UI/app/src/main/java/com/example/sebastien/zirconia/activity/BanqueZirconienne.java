@@ -140,18 +140,12 @@ public class BanqueZirconienne extends AppCompatActivity
 
             TextView prenomClient = (TextView) view.findViewById(R.id.prenomClient);
             TextView nomClient = (TextView) view.findViewById(R.id.nomClient);
-            TextView ageClient = (TextView) view.findViewById(R.id.ageClient);
-            TextView raceClient = (TextView) view.findViewById(R.id.raceClient);
-            TextView classeClient = (TextView) view.findViewById(R.id.classeClient);
             TextView fiabiliteClient = (TextView) view.findViewById(R.id.fiabiliteClient);
             ImageButton supp = (ImageButton) view.findViewById(R.id.supp);
             supp.setBackgroundResource(R.drawable.bouton_supp);
 
             prenomClient.setText(compteBancaire.getPrenomClient());
             nomClient.setText(compteBancaire.getNomClient());
-            ageClient.setText(getString(R.string.ageClient, compteBancaire.getAgeClient()));
-            raceClient.setText(getString(R.string.raceClient, compteBancaire.getRaceClient()));
-            classeClient.setText(getString(R.string.classeClient, compteBancaire.getClasseClient()));
             fiabiliteClient.setText(getString(R.string.fiabiliteClient, compteBancaire.getFiabilité()));
 
             supp.setOnClickListener(new View.OnClickListener(){

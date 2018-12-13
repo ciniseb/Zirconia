@@ -8,86 +8,64 @@
     android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal">
 
-    <RelativeLayout
-        android:id="@+id/gauche"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="4dp">
-
-        <TextView
-            android:id="@+id/nomClient"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/prenomClient"
-            android:text="Nom"
-            android:textColor="@color/noir"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/prenomClient"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="Prénom"
-            android:textColor="@color/noir"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/ageClient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/nomClient"
-            android:gravity="end|center"
-            android:text="@string/ageClient"
-            android:textColor="@color/noir"
-            android:textSize="16sp" />
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/prenomClient"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/client"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/raceClient"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/raceClient"
+                    android:id="@+id/nomClient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_toEndOf="@id/prenomClient"
+                    android:gravity="bottom"
+                    android:text="Nom"
                     android:textColor="@color/noir"
-                    android:textSize="12sp" />
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/classeClient"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/classeClient"
+                    android:id="@+id/prenomClient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom"
+                    android:text="Prénom"
                     android:textColor="@color/noir"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                    android:textSize="20sp" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/fiabiliteClient"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:gravity="end"
                 android:text="@string/fiabiliteClient"
-                android:textColor="@color/noir"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
         </LinearLayout>
-    </RelativeLayout>
+
+        <android.support.v4.widget.Space
+            android:id="@+id/espace"
+            android:layout_width="110dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/supp"
         android:layout_width="110dp"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_delete_forever_black_24dp"
-        android:contentDescription="Supprimer le compte bancaire" />
+        android:contentDescription="Supprimer le compte bancaire"
+        android:src="@drawable/ic_delete_forever_black_24dp" />
 
 </LinearLayout>
