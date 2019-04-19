@@ -3,7 +3,7 @@ package com.example.sebastien.zirconia.model;
 public class De
 {
     //Variables
-    int nbCotes;
+    int nbFaces;
 
     //Constructeurs
     public De()
@@ -12,12 +12,13 @@ public class De
     }
 
     //Méthodes
-    public void setNbCotes(int nbCotes)
+    public void setNbFaces(int nbFaces)
     {
-        this.nbCotes = nbCotes;
+        this.nbFaces = nbFaces;
     }
-    public int brasser()
+    public int lancer()
     {
-        return (1 + (int)(Math.random() * nbCotes));
+        return (1 + (int)(Math.random() * nbFaces));
     }
 }
+

@@ -16,8 +16,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.sebastien.zirconia.CompteBancaire;
 import com.example.sebastien.zirconia.R;
+import com.example.sebastien.zirconia.model.Joueur;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class BanqueZirconienne extends AppCompatActivity
 {
     //Créer
     Button nouvCompte, suppUnCompte;
-    static AdapteurArrayCompteBancaire adapteur;
+    static AdapteurArrayCompte adapteurCompte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,14 +37,11 @@ public class BanqueZirconienne extends AppCompatActivity
         setContentView(R.layout.layout_banque_zirconienne);
 
         //suppClique = false;
-        final ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
-        for(int i = 0 ; i < partieActive.getJoueurs().size() ; i++)
-        {
-            comptesBancaires.add(partieActive.getJoueurs().get(i).getCompteBancaire());
-        }
-        adapteur = new AdapteurArrayCompteBancaire(this, 0, comptesBancaires);
-        ListView listView = (ListView) findViewById(R.id.listeComptesBancaires);
-        listView.setAdapter(adapteur);
+        final ArrayList<Joueur> clients = new ArrayList<>(partieActive.getJoueurs());
+
+        adapteurCompte = new AdapteurArrayCompte(this, 0, clients);
+        ListView listeComptesBancaires = (ListView) findViewById(R.id.listeComptesBancaires);
+        listeComptesBancaires.setAdapter(adapteurCompte);
 
         //Attribuer
         nouvCompte = (Button) findViewById(R.id.nouvCompte);
@@ -73,67 +70,64 @@ public class BanqueZirconienne extends AppCompatActivity
                 {
                     suppUnCompte.setText("Supprimer\nun compte");
                     suppUnCompte.setSelected(false);
-                    adapteur.setAfficheBoutonSupp(false);
+                    adapteurCompte.setAfficheBoutonSupp(false);
                 }
                 else
                 {
                     suppUnCompte.setText("Annuler\nla suppression");
                     suppUnCompte.setSelected(true);
-                    adapteur.setAfficheBoutonSupp(true);
+                    adapteurCompte.setAfficheBoutonSupp(true);
                 }
-                adapteur.notifyDataSetChanged();
+                adapteurCompte.notifyDataSetChanged();
             }
         });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        listeComptesBancaires.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                Log.wtf("Compte bancaire", comptesBancaires.get(position).getPrenomClient());
-                comptesBancaires.get(position).startActivity(position, getApplicationContext());
+                Log.wtf("Compte bancaire", clients.get(position).getPrenom());
+                CompteBancaire compteBancaire = new CompteBancaire();
+                compteBancaire.startActivity(position, getApplicationContext());
             }
         });
 
     }
     //Méthodes
-    static public void actualisationComptesBancaires()
+    static public void actualisationCompte()
     {
-        ArrayList<CompteBancaire> comptesBancaires = new ArrayList<>();
-        for(int i = 0 ; i < partieActive.getJoueurs().size() ; i++)
-        {
-            comptesBancaires.add(partieActive.getJoueurs().get(i).getCompteBancaire());
-        }
-        adapteur.clear();
+        ArrayList<Joueur> clients = new ArrayList<>(partieActive.getJoueurs());
 
-        for (Object object : comptesBancaires)
-        {
+        adapteurCompte.clear();
 
-            adapteur.insert(comptesBancaires.get(adapteur.getCount()), adapteur.getCount());
+        for (Object object : clients)
+        {
+            adapteurCompte.insert(clients.get(adapteurCompte.getCount()), adapteurCompte.getCount());
         }
-        adapteur.notifyDataSetChanged();
+        adapteurCompte.notifyDataSetChanged();
     }
 
     //custom ArrayAdapter
-    class AdapteurArrayCompteBancaire extends ArrayAdapter<CompteBancaire>
+    class AdapteurArrayCompte extends ArrayAdapter<Joueur>
     {
         private Context context;
         private int layout;
-        private List<CompteBancaire> comptesBancaires;
+        private List<Joueur> clients;
         Boolean afficheBoutonSupp = null;
 
-        public AdapteurArrayCompteBancaire(Context context, int resource, ArrayList<CompteBancaire> objects)
+        public AdapteurArrayCompte(Context context, int resource, ArrayList<Joueur> objects)
         {
             super(context, resource, objects);
 
             this.context = context;
             this.layout = resource;
-            this.comptesBancaires = objects;
+            this.clients = objects;
             afficheBoutonSupp = false;
         }
 
         public View getView(final int position, View convertView, ViewGroup parent)
         {
-            final CompteBancaire compteBancaire = comptesBancaires.get(position);
+            final Joueur client = clients.get(position);
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.layout_bouton_compte_bancaire, null);
@@ -144,16 +138,16 @@ public class BanqueZirconienne extends AppCompatActivity
             ImageButton supp = (ImageButton) view.findViewById(R.id.supp);
             supp.setBackgroundResource(R.drawable.bouton_supp);
 
-            prenomClient.setText(compteBancaire.getPrenomClient());
-            nomClient.setText(compteBancaire.getNomClient());
-            fiabiliteClient.setText(getString(R.string.fiabiliteClient, compteBancaire.getFiabilité()));
+            prenomClient.setText(client.getPrenom());
+            nomClient.setText(client.getNom());
+            fiabiliteClient.setText(getString(R.string.fiabiliteClient, client.getCompteBancaire().getFiabilite()));
 
             supp.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v)
                 {
-                    comptesBancaires.set(position, new CompteBancaire());
-                    partieActive.getJoueurs().get(position).setCompteBancaire(new CompteBancaire());
+                    clients.get(position).getCompteBancaire().setEtat(com.example.sebastien.zirconia.model.CompteBancaire.Etat.Ferme);
+                    partieActive.getJoueurs().get(position).getCompteBancaire().setEtat(com.example.sebastien.zirconia.model.CompteBancaire.Etat.Ferme);
                     notifyDataSetChanged();
                 }
             });
@@ -162,7 +156,7 @@ public class BanqueZirconienne extends AppCompatActivity
             view.setClickable(false);
 
 
-            if(!compteBancaire.getCompteActif())
+            if(client.getCompteBancaire().getEtat() == com.example.sebastien.zirconia.model.CompteBancaire.Etat.Ferme || client.getCompteBancaire().getEtat() == com.example.sebastien.zirconia.model.CompteBancaire.Etat.Inexistant)
             {
                 view = inflater.inflate(R.layout.layout_compte_vide, null);
                 view.setClickable(true);

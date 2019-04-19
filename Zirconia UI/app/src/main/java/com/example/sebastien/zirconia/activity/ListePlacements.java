@@ -52,7 +52,7 @@ public class ListePlacements extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 //TODO
-                /*partieActive.getJoueurs().get(position).setCompteBancaire(partieActive.getJoueurs().get(position));
+                /*partieActive.getJoueurs().get(position).setCompteBancaire2(partieActive.getJoueurs().get(position));
                 adapteur.notifyDataSetChanged();
                 BanqueZirconienne.actualisationComptesBancaires();
                 finish();*/

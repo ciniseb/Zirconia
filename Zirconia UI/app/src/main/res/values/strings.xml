@@ -2,10 +2,12 @@
     <string name="app_name">Zirconia UI</string>
 
     <!--Spéciaux-->
-    <string name="ageClient">Âge : %1$d</string>
+    <string name="ageClient">Âge : %1$d ans</string>
     <string name="raceClient">Race : %1$s</string>
     <string name="classeClient">Classe : %1$s</string>
     <string name="fiabiliteClient">Fiabilité : %1$d%%</string>
+
+    <string name="fiabiliteInconnue">Fiabilité : Inconnue</string>
 
     <string name="ageJoueur">Âge : %1$d</string>
     <string name="raceJoueur">Race : %1$s</string>

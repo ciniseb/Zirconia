@@ -1,12 +1,10 @@
 package com.example.sebastien.zirconia.model;
 
-import com.example.sebastien.zirconia.CompteBancaire;
-
 /**
  * Created by sebastien on 18-01-26.
  */
 
-public class Joueur
+public class Joueur /*implements Serializable*/
 {
     //Caractéristiques générales
     String prenom, nom, genre, race, classe;
@@ -26,11 +24,9 @@ public class Joueur
 
     //CompteBancaire
     CompteBancaire compteBancaire;
-    Boolean compteBancaireExiste;
-    int fiabilite;
 
     //Constructeur sans genre
-    public Joueur(String prenom, String nom, String genre, String race, String classe, int age, String couleurPeau, String couleurCheveux, String formeCheveux, String couleurPoils, String emplacementDesPoils, String couleurYeux, int longueurCheveux, int beauteVisage, int grosseur, int grandeur, int musculature, int beauteCorps, String[] qualites, String[] defauts, String enCoupleAvec, String faction, int ressuzins, int zircons, CompteBancaire compteBancaire, Boolean compteBancaireExiste, int fiabilite)
+    public Joueur(String prenom, String nom, String genre, String race, String classe, int age, String couleurPeau, String couleurCheveux, String formeCheveux, String couleurPoils, String emplacementDesPoils, String couleurYeux, int longueurCheveux, int beauteVisage, int grosseur, int grandeur, int musculature, int beauteCorps, String[] qualites, String[] defauts, String enCoupleAvec, String faction, int ressuzins, int zircons, CompteBancaire compteBancaire)
     {
         this.prenom = prenom;
         this.nom = nom;
@@ -58,9 +54,7 @@ public class Joueur
         this.ressuzins = ressuzins;
         this.zircons = zircons;
 
-        this.compteBancaire =compteBancaire;
-        this.compteBancaireExiste = compteBancaireExiste;
-        this.fiabilite = fiabilite;
+        this.compteBancaire = compteBancaire;
     }
 
     //Méthodes
@@ -168,25 +162,8 @@ public class Joueur
         return compteBancaire;
     }
 
-    public Boolean getCompteBancaireExiste()
-    {
-        return compteBancaireExiste;
-    }
-    public int getFiabilite()
-    {
-        return fiabilite;
-    }
-
-    public void setCompteBancaire(Joueur joueur)
-    {
-        this.compteBancaire = new CompteBancaire(joueur);
-    }
-    public void setCompteBancaire(CompteBancaire compteBancaire )
+    public void setCompteBancaire(CompteBancaire compteBancaire)
     {
         this.compteBancaire = compteBancaire;
-    }
-    public void setCompteBancaireExiste(Boolean compteBancaireExiste)
-    {
-        this.compteBancaireExiste = compteBancaireExiste;
     }
 }

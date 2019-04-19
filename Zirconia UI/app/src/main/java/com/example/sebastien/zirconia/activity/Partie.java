@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.sebastien.zirconia.CompteBancaire;
 import com.example.sebastien.zirconia.R;
+import com.example.sebastien.zirconia.model.CompteBancaire;
 import com.example.sebastien.zirconia.model.Joueur;
 
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ public class Partie extends AppCompatActivity
     Partie()
     {
         //Temporaire
-        joueurs.add(new Joueur("Ciniseb", "Galor", "Homme", "Sylphigle", "Cartomancien", 122, "Blanc", "chatain", "curvy", "chatain", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Gabrya Winchester", "Aucune", 2, 69, new CompteBancaire(), false,85));
-        joueurs.add(new Joueur("Gabrya", "Winchester", "Femme", "Zygöge", "Archer Élémentaire", 68, "Blanc", "brun", "droits", "bruns", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Ciniseb Galor", "Aucune", 1, 54, new CompteBancaire(),false,85));
+        joueurs.add(new Joueur("Ciniseb", "Galor", "Homme", "Sylphigle", "Cartomancien", 122, "Blanc", "chatain", "curvy", "chatain", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Gabrya Winchester", "Aucune", 2, 69, new CompteBancaire()));
+        joueurs.add(new Joueur("Gabrya", "Winchester", "Femme", "Zygöge", "Archer Élémentaire", 68, "Blanc", "brun", "droits", "bruns", "nullepart", "bleu", 0, 0, 0, 0, 0, 0, null, null, "Ciniseb Galor", "Aucune", 1, 54, new CompteBancaire()));
     }
 
     //Getteurs & Setteurs

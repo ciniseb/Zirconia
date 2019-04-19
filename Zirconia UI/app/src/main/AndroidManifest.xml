@@ -25,7 +25,7 @@
             android:name=".activity.BanqueZirconienne"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.ListeJoueurs" />
-        <activity android:name=".CompteBancaire" />
+        <activity android:name=".activity.CompteBancaire" />
         <activity android:name=".activity.Generique" />
         <activity android:name=".activity.ListePlacements" />
         <!-- <activity android:name=".ListePlacementsSMEER" /> -->

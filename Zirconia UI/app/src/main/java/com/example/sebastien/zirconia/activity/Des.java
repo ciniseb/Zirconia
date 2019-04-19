@@ -83,22 +83,22 @@ public class Des extends AppCompatActivity
                     switch(finalNoDe)
                     {
                         case 0:
-                            deChoisi.setNbCotes(4);
+                            deChoisi.setNbFaces(4);
                             break;
                         case 1:
-                            deChoisi.setNbCotes(6);
+                            deChoisi.setNbFaces(6);
                             break;
                         case 2:
-                            deChoisi.setNbCotes(8);
+                            deChoisi.setNbFaces(8);
                             break;
                         case 3:
-                            deChoisi.setNbCotes(10);
+                            deChoisi.setNbFaces(10);
                             break;
                         case 4:
-                            deChoisi.setNbCotes(12);
+                            deChoisi.setNbFaces(12);
                             break;
                         case 5:
-                            deChoisi.setNbCotes(20);
+                            deChoisi.setNbFaces(20);
                             break;
                         default:
                             break;
@@ -113,7 +113,7 @@ public class Des extends AppCompatActivity
             {
                 if(deChoisi != null)
                 {
-                    String txt = "" + deChoisi.brasser();
+                    String txt = "" + deChoisi.lancer();
                     resultat.setText(txt);
                     //TODO Fonction qui brasse le dé 3-5 fois avant le resultat
                 }

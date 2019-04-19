@@ -10,33 +10,27 @@
         android:id="@+id/prenomJoueur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textColor="@color/noir"
+        android:textStyle="bold"
         android:text="Prénom" />
+    <!--android:layout_marginEnd="8dp"-->
 
     <TextView
         android:id="@+id/nomJoueur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/prenomJoueur"
-        android:textSize="20sp"
-        android:textColor="@color/noir"
-        android:text="Nom" />
-
-    <TextView
-        android:id="@+id/coupleJoueur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/prenomJoueur"
-        android:textSize="10sp"
+        android:textSize="18sp"
         android:textColor="@color/noir"
-        android:text="@string/coupleJoueur" />
+        android:textStyle="bold"
+        android:text="Nom" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/nomJoueur"
+        android:layout_toEndOf="@id/prenomJoueur"
+        android:layout_alignBottom="@id/caracteristiquesClient"
         android:orientation="vertical">
 
 
@@ -78,9 +72,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/caracteristiquesClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/coupleJoueur"
+        android:layout_below="@+id/nomJoueur"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -89,20 +84,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/factionJoueur"
+                android:id="@+id/fiabiliteClient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
                 android:textColor="@color/noir"
-                android:text="@string/factionJoueur" />
-
-            <TextView
-                android:id="@+id/ressuzinsJoueur"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/noir"
-                android:text="@string/ressuzinsJoueur" />
+                android:text="@string/fiabiliteClient"/>
 
             <TextView
                 android:id="@+id/zirconsJoueur"
@@ -111,6 +98,14 @@
                 android:textSize="12sp"
                 android:textColor="@color/noir"
                 android:text="@string/zirconsJoueur" />
+
+            <TextView
+                android:id="@+id/factionJoueur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/noir"
+                android:text="@string/factionJoueur" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.sebastien.zirconia;
+package com.example.sebastien.zirconia.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.sebastien.zirconia.activity.ListePlacements;
+import com.example.sebastien.zirconia.R;
 import com.example.sebastien.zirconia.model.Placement;
 import com.example.sebastien.zirconia.model.Joueur;
 import com.example.sebastien.zirconia.model.PlacementSMEER;
@@ -25,87 +25,18 @@ import static com.example.sebastien.zirconia.activity.MenuPrincipal.partieActive
  * Created by sebastien on 18-01-31.
  */
 
-public class CompteBancaire  extends AppCompatActivity
+public class CompteBancaire extends AppCompatActivity
 {
     //Variables
-    String prenomClient, nomClient, raceClient, classeClient;
-    int ageClient, fiabilité;
-
-    Placement[] placements = new Placement[2];
-    PlacementSMEER[] placementsSMEER = new PlacementSMEER[5];
-
-    //État du compte
-    public boolean compteActif;
 
     //Pour layout TEMPORAIRE
     ArrayAdapter<Placement> adapteurPlacements;
     ArrayAdapter<PlacementSMEER> adapteurPlacementsSMEER;
 
     //Constructeurs
-    public CompteBancaire()
-    {
-        this.compteActif = false;
-    }
-    public CompteBancaire(Joueur joueur)//Constructeur lorsque le compte bancaire du joueur est créé
-    {
-        this.prenomClient = joueur.getPrenom();
-        this.nomClient = joueur.getNom();
-        this.raceClient = joueur.getRace();
-        this.classeClient = joueur.getClasse();
-        this.ageClient = joueur.getAge();
-        this.fiabilité = joueur.getFiabilite();
-        this.placements = new Placement[2];
-        for(int i = 0 ; i < placements.length ; i++)
-            placements[i] = new Placement();
-        this.placementsSMEER = new PlacementSMEER[5];
-        for(int i = 0 ; i < placementsSMEER.length ; i++)
-            placementsSMEER[i] = new PlacementSMEER();
-
-        this.compteActif = true;
-    }
 
     //Getteurs & setteurs
-    public String getPrenomClient()
-    {
-        return prenomClient;
-    }
-    public String getNomClient()
-    {
-        return nomClient;
-    }
-    public String getRaceClient()
-    {
-        return raceClient;
-    }
-    public String getClasseClient()
-    {
-        return classeClient;
-    }
-    public int getAgeClient()
-    {
-        return ageClient;
-    }
-    public int getFiabilité()
-    {
-        return fiabilité;
-    }
-    public Placement[] getPlacements()
-    {
-        return placements;
-    }
-    public PlacementSMEER[] getPlacementsSMEER()
-    {
-        return placementsSMEER;
-    }
-    public boolean getCompteActif()
-    {
-        return compteActif;
-    }
 
-    public void setCompteActif(boolean compteActif)
-    {
-        this.compteActif = compteActif;
-    }
 
     //Méthodes
     public void startActivity(int position, Context context)
@@ -123,13 +54,13 @@ public class CompteBancaire  extends AppCompatActivity
         setContentView(R.layout.layout_compte_bancaire);
 
         int position = getIntent().getIntExtra("position", 0);
-        Joueur joueur = partieActive.getJoueurs().get(position);
+        Joueur client = partieActive.getJoueurs().get(position);
 
         TextView prenomClient = findViewById(R.id.prenomClient);
         TextView nomClient = findViewById(R.id.nomClient);
 
-        prenomClient.setText(joueur.getPrenom());
-        nomClient.setText(joueur.getNom());
+        prenomClient.setText(client.getPrenom());
+        nomClient.setText(client.getNom());
 
         Button nouvPlacement, suppUnPlacement;
         nouvPlacement = (Button) findViewById(R.id.nouvPlacement);
@@ -155,13 +86,13 @@ public class CompteBancaire  extends AppCompatActivity
         Placement[] placements = new Placement[2];
         PlacementSMEER[] placementsSMEER = new PlacementSMEER[5];
 
-        for(int i = 0 ; i < joueur.getCompteBancaire().getPlacements().length ; i++)
+        for(int i = 0; i < client.getCompteBancaire().getPlacements().length ; i++)
         {
-            placements[i] = joueur.getCompteBancaire().getPlacements()[i];
+            placements[i] = client.getCompteBancaire().getPlacements()[i];
         }
-        for(int i = 0 ; i < joueur.getCompteBancaire().getPlacementsSMEER().length ; i++)
+        for(int i = 0; i < client.getCompteBancaire().getPlacementsSMEER().length ; i++)
         {
-            placementsSMEER[i] = joueur.getCompteBancaire().getPlacementsSMEER()[i];
+            placementsSMEER[i] = client.getCompteBancaire().getPlacementsSMEER()[i];
         }
         //placements[0] = new Placement(Placement.Type.Libre, 0f, 5,0);
         //placements[1] = new Placement(Placement.Type.Régulier, 1.5f, 10,0);
